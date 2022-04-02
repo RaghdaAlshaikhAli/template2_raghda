@@ -1,0 +1,419 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family:"pt-sans",sans-serif;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+li{
+    display: inline-block; 
+}
+.section-padding{
+    padding: 40px 0;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+.heading1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+.heading1::after {
+    content: '';
+    background: #7b5244;
+    display: block;
+    height: 2px;
+    width: 100px;
+    margin: auto;
+    transition: width .5s;
+    margin-top: 10px;
+}
+.heading1:hover::after{
+    width: 150px;
+}
+/* HEADER................................................................................................... */
+header {
+    padding: 42px 0;
+}
+.header-content{
+    display: grid;
+    align-items: center;
+    grid-template-areas: 
+    "hd hd3 hd3 hd1";
+}
+.header-content img{
+    grid-area: hd ;
+    max-width: 150px;
+}
+.header-content nav{
+grid-area: hd3 ;
+}
+.header-content  .login{
+grid-area: hd1 ;
+}
+.header-content ul li {
+    display: inline-block;
+}
+.header-content ul li a , .header-content ul li a,.Penelope-item h3,.Penelope-desc .icon-top .icons{
+    color:#7b5244;
+}
+.header-content nav ul li .dropdown-item {
+    position: relative;
+    padding: 10px 19px;
+    display: block;
+    font-weight: bold;
+    position: relative;
+}
+.header-content nav ul li .dropdown-item:before,.header-content nav ul li .dropdown-item:after{
+    content:"";
+    position: absolute;
+    border-style: solid; 
+    left: 0;
+    top:0; 
+    transition: transform 0.2s;
+}
+.header-content nav ul li .dropdown-item:before{
+    border-width: 0 2px;
+    height: 100%; 
+    width: 95%;
+    transform: scale(1,0);
+}
+.header-content nav ul li .dropdown-item:hover:before{
+    transform: scale(1,1);
+    height: 100%; 
+}
+.header-content nav ul li .dropdown-item:after{
+    border-width: 2px 0;
+    height: 91%; 
+    width: 98%;
+    transform: scale(0,1);
+    transform-origin: left;
+}
+.header-content nav ul li .dropdown-item:hover:after{
+    transform: scale(1,1);
+    transition-delay: .2s;
+}
+.header-content .login li  {
+    padding: 10px ;
+    font-weight: bold;
+}
+.header-content .login .last i {
+ position: relative;
+ margin-right: 11px;
+}
+.header-content .login .last i::after{
+    position: absolute;
+    content: "0";
+    background-color: #7b5244;
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 13px;
+    bottom: -6px;
+}
+/* DROPDOWN.................................................................................................... */
+.dropdown{
+position: relative;
+}
+.dropdown-menu{
+    position: absolute;
+    width: 450px;
+    border: 2px solid #7b5244;
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 5px;
+    transform: scale(0);
+    transition: transform 0.5s , visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.dropdown:hover .dropdown-menu{
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown-menu ul{
+    display: table-cell;
+    text-align: left;
+}
+.dropdown-menu ul .li-first a {
+    display: block;
+    border-bottom: 1px dotted #7b5244;
+    margin-bottom: 10px;
+}
+.dropdown-menu ul li {
+    line-height: 1.7;
+}
+  /* banner */
+.banner img {
+    width: 100%;
+}
+/* Home */
+.home {
+    display: grid;
+    grid-gap:10px;
+    grid-template-columns: repeat(4, 1fr);
+}
+.home-item{
+    position: relative;
+}
+.home img {
+    width: 100%;
+    margin-bottom: 25px;
+}
+.home h4 {
+    color: gray;
+    font-weight: normal;  
+}  
+.home-item-title {
+    font-size: 19px;
+}
+.home-item .icons{
+    color: #fff;
+    text-align: center;
+    display: block;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: brown;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.1;
+}
+.home-item:hover .icons{
+    opacity: 1;
+    visibility: visible;
+}
+/* Penelope................................................................................................... */
+.Penelope {
+    margin:30px 0;
+    display: flex;
+    flex-direction: row;
+}
+.Penelope-desc{
+    flex:2;
+    padding: 15px 20px;
+    background: #f7f3ef;
+    position: relative;
+}
+.Penelope-item {
+    flex: 1;
+    height: 300px;
+    line-height: 1.1;
+    position: relative;
+}
+.Penelope-item h3{
+    font-weight: normal;
+    padding-top:20px;
+    padding-left: 15px;
+}
+.Penelope-item h2{
+    font-size: 20px;
+    padding-left: 15px;
+}
+.Penelope-item2{
+    background-image: url(../image/cms-banner-1.jpg);
+    margin:0 20px;
+    background-size: cover;
+    transition: transform 0.5s;
+}
+.Penelope-item:hover{
+    transform: scale(1.1);
+}
+.Penelope-desc .icon-top{
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+.Penelope-desc .icon-top .icons{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 48px;
+}
+.Penelope-desc .icon-top{
+    padding-top: 6px;
+}
+.Penelope-desc p{
+    line-height: 1.7;
+}
+.Penelope-desc .liness span{
+     display: inline-block;
+     width:50px;
+     height: 2px;
+     background: #7b5244;
+     margin-left: 12px;
+}
+.Penelope-desc .liness{
+    display: flex;
+    justify-content: flex-end;
+    bottom: 25px;
+    right: 38px;
+    position: absolute;
+    width: 100%;
+}
+.Penelope-item3{
+    background-image: url(../image/cms-banner-2.jpg);
+    background-size: cover; 
+    transition: transform .5s;
+}
+/* Delivery.................................................................................................. */
+.Delivery {
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 55px;
+}
+.Delivery-item{
+    text-align: center;
+}
+.Delivery-border{
+    border-right: 1px solid #7b5244;
+}
+.Delivery-item h3{
+    font-size: 17px;
+}
+.Delivery-item span{
+    color: gray;
+    font-size: 15px;
+}
+.Delivery-icon{
+    background-image: url(../image/service-icon.png);
+    background-repeat: no-repeat;
+    height: 55px;
+    transition: all .5s;
+}
+.Delivery-icon1{
+background-position: center 5px;
+}
+.Delivery-item:hover .Delivery-icon1{
+    background-position: center -86px;
+}
+.Delivery-icon2{
+background-position: center -180px;
+}
+.Delivery-item:hover .Delivery-icon2{
+    background-position: center -273px;
+}
+.Delivery-icon3{
+background-position: center -366px;
+}
+.Delivery-item:hover .Delivery-icon3{
+    background-position: center -455px;
+}
+.Delivery-icon4{
+background-position: center -549px;
+ }
+ .Delivery-item:hover .Delivery-icon4{
+    background-position: center -639px;
+}
+.Delivery-icon5{
+background-position: center -734px;
+}
+.Delivery-item:hover .Delivery-icon5{
+    background-position: center -826px;
+}
+/* PRODUCTS.................................................................................................. */
+.list-product{
+    display: flex;
+    justify-content: center;
+}
+.list-product li{
+    margin: 10px 20px;
+}
+.products-items{
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ grid-gap: 15px;
+ margin: 30px 0;
+}
+.product-item-end{
+    margin-bottom: 20px;
+}
+.product-item-end2{
+    margin-bottom: 36px;
+}
+.product-item{
+ position: relative;
+}
+.product-item img{
+    width: 100%;
+}
+.product-rotate{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform:scalex(0);
+    opacity: 0.9;
+    transition: transform 0.2s;
+}
+.product-rotate ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.product-rotate ul li{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    background-color: #7b5244;
+}
+.product-rotate ul li i{
+    color: #fff;
+    line-height: 40px;
+}
+.product-item:hover .product-rotate{
+    transform: scalex(1);
+}
+.product-item i.active{
+    color: yellow;
+}
+.product-info span{
+    display: block;
+    margin: 5px 0;
+}
+.product-info i{
+    margin-top: 10px;
+    font-size: 14px;
+}
+.list-un i{
+    font-size: 20px;
+}
+.header-content .list-un i{
+    font-size: 28px;
+}
+@media (max-width: 768px) {
+    .header-content{
+        display: grid;
+        align-items: center;
+        grid-template-areas: 
+        "hd"
+        "hd3"
+        "hd1";
+    }
+    .home,.products-items {
+        display: grid;
+        grid-gap:10px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .home ,.products-items{
+        display: grid;
+        grid-gap:10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
